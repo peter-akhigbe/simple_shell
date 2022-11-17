@@ -1,5 +1,4 @@
-#include "shell.h"
-
+#include "main.h"
 /**
  *_eputs - prints an input string
  * @str: the string to be printed
@@ -18,7 +17,6 @@ void _eputs(char *str)
 		i++;
 	}
 }
-
 /**
  * _eputchar - writes the character c to stderr
  * @c: The character to print
@@ -40,7 +38,6 @@ int _eputchar(char c)
 		buf[i++] = c;
 	return (1);
 }
-
 /**
  * _putfd - writes the character c to given fd
  * @c: The character to print
@@ -63,7 +60,6 @@ int _putfd(char c, int fd)
 		buf[i++] = c;
 	return (1);
 }
-
 /**
  *_putsfd - prints an input string
  * @str: the string to be printed
@@ -77,6 +73,7 @@ int _putsfd(char *str, int fd)
 
 	if (!str)
 		return (0);
+
 	while (*str)
 	{
 		i += _putfd(*str++, fd);

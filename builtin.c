@@ -1,5 +1,4 @@
-#include "shell.h"
-
+#include "main.h"
 /**
  * _myexit - exits the shell
  * @info: Structure containing potential arguments. Used to maintain
@@ -28,7 +27,6 @@ int _myexit(info_t *info)
 	info->err_num = -1;
 	return (-2);
 }
-
 /**
  * _mycd - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain
@@ -78,7 +76,6 @@ int _mycd(info_t *info)
 	}
 	return (0);
 }
-
 /**
  * _myhelp - changes the current directory of the process
  * @info: Structure containing potential arguments. Used to maintain

@@ -1,6 +1,5 @@
 #ifndef _SHELL_H_
 #define _SHELL_H_
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -30,12 +29,9 @@
 /* 1 if using system getline() */
 #define USE_GETLINE 0
 #define USE_STRTOK 0
-
 #define HIST_FILE	".simple_shell_history"
 #define HIST_MAX	4096
-
 extern char **environ;
-
 
 /**
  * struct liststr - singly linked list
@@ -43,6 +39,7 @@ extern char **environ;
  * @str: a string
  * @next: points to the next node
  */
+
 typedef struct liststr
 {
 	int num;
@@ -72,6 +69,7 @@ typedef struct liststr
  *@readfd: the fd from which to read line input
  *@histcount: the history line number count
  */
+
 typedef struct passinfo
 {
 	char *arg;
@@ -88,7 +86,6 @@ typedef struct passinfo
 	char **environ;
 	int env_changed;
 	int status;
-
 	char **cmd_buf; /* pointer to cmd ; chain buffer, for memory mangement */
 	int cmd_buf_type; /* CMD_type ||, &&, ; */
 	int readfd;
@@ -104,12 +101,12 @@ typedef struct passinfo
  *@type: the builtin command flag
  *@func: the function
  */
+
 typedef struct builtin
 {
 	char *type;
 	int (*func)(info_t *);
 } builtin_table;
-
 
 /* toem_shloop.c */
 int hsh(info_t *, char **);
@@ -231,5 +228,4 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
-
 #endif
